@@ -1,4 +1,5 @@
 import os.path
+import pytest
 import tempfile
 
 import wordcount_lib
@@ -51,4 +52,8 @@ def test_consume_4():
     assert chars == 12                     # includes whitespace in char count
     assert words == 5
     assert lines == 1
-    
+
+def test_daaaangerous():
+    with pytest.raises(Exception) as e_info:
+        wordcount_lib.daaaangerous()
+
